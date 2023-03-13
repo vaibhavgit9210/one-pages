@@ -1,5 +1,6 @@
 import requests
 import json
+import time
 
 # Set your key ID and secret
 key_id = 'rzp_test_ONh6wsI8eC4wDV'
@@ -40,7 +41,7 @@ fund_account_id = response.json()['id']
 
 # Set the request body for validating the fund account
 validation_body = {
-    'account_number': '4564563319243921',
+    'account_number': '2323230013996236',
     'fund_account': {
         'id': fund_account_id
     },
@@ -62,13 +63,15 @@ response = requests.post(
 
 # Get the ID of the validated fund account from the response
 validated_account_id = response.json()['id']
+
 print(response.json()['id'])
+time.sleep
 response = requests.get(
-    validations_url + validated_account_id,
-    headers=headers,
+    validations_url +'/'+ validated_account_id,
     auth=(key_id, key_secret)
 )
-
+print(validations_url + validated_account_id)
 data = json.dumps(response.json(), indent=2)
 
 print(data)
+
