@@ -5,8 +5,8 @@ import time
 # Set your key ID and secret
 key_id = 'rzp_live_nIheycrQTKL62K'
 key_secret = 'NWvZwOwhEbtuhLShnIO0C3oK'
-ifsc = 'RATN0VAAPIS'
-acc_num = '7878780042727356'
+ifsc = 'YESB0CMSNOC'
+acc_num = '4564561187848422'
 
 # Set the endpoint URLs
 fund_accounts_url = 'https://api.razorpay.com/v1/fund_accounts'
@@ -66,10 +66,11 @@ time.sleep(10)
 
 validated_account_id = response.json()['id']
 
-print(response.json()['id'])
+print(validated_account_id)
 
 response = requests.get(
     validations_url + '/' + validated_account_id,
+    headers=headers,
     auth=(key_id, key_secret)
 )
 
