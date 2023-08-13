@@ -3,10 +3,10 @@ import json
 import time
 
 # Set your key ID and secret
-key_id = 'rzp_live_nIheycrQTKL62K'
-key_secret = 'NWvZwOwhEbtuhLShnIO0C3oK'
-ifsc = 'RATN0VAAPIS'
-acc_num = '7878780042727356'
+key_id = 'rzp_live_5enyDt1VeMy4S8'
+key_secret = 'Qqjy7QEVBPv0kucozsubQJqy'
+ifsc = 'BARB0KHASUR'
+acc_num = '7390100024926'
 
 # Set the endpoint URLs
 fund_accounts_url = 'https://api.razorpay.com/v1/fund_accounts'
@@ -61,8 +61,8 @@ response = requests.post(
     json=validation_body
 )
 
-# Get the ID of the validated fund account from the response
-time.sleep(10)
+# Adding buffer
+time.sleep(15)
 
 validated_account_id = response.json()['id']
 
